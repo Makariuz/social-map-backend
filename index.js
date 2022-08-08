@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
 app.use('/map/pins', pinRoute)
 app.use('/map/', userRoute)
 app.get('/', (req,res) => {
-    res.send('Check main website!!!')
+    res.send('Check main website!!')
 })
 
 app.listen(process.env.PORT || 8800, () => {
