@@ -19,6 +19,6 @@ app.get('/', (req,res) => {
     res.send('Check main website!!')
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8800, () => {
     console.log('backend server is running')
 })
