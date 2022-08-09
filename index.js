@@ -4,8 +4,11 @@ const dotenv = require('dotenv')
 const app = express()
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
+var cors = require('cors')
 
 dotenv.config()
+
+app.use(cors())
 
 app.use(express.json())
 
