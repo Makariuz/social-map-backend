@@ -8,9 +8,15 @@ var cors = require('cors')
 
 dotenv.config()
 
-app.use(cors())
+
 
 app.use(express.json())
+app.use(
+    cors({
+      origin: process.env.FRONTEND_URL,
+      credentials: true
+    })
+  );
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log('MongoDB is connected')
