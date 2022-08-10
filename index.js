@@ -11,12 +11,8 @@ dotenv.config()
 
 
 app.use(express.json())
-app.use(
-    cors({
-      origin: process.env.FRONTEND_URL,
-      credentials: true
-    })
-  );
+app.use(cors())
+
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log('MongoDB is connected')
