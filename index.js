@@ -27,7 +27,7 @@ app.use('/map/pins', pinRoute)
 const userRoute = require('./routes/users')
 app.use('/map', userRoute)
 app.get('/', (req,res) => {
-    res.send('Check main website!!!!!x')
+    res.send('Check main website! || socialmaps.netflify.com ||')
 })
 
 app.listen(process.env.PORT || 5000, () => {
