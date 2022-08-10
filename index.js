@@ -2,8 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const app = express()
-const pinRoute = require('./routes/pins')
-const userRoute = require('./routes/users')
+
+
 var cors = require('cors')
 
 dotenv.config()
@@ -22,10 +22,12 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log('MongoDB is connected')
 }).catch(err => console.log(err))
 
-app.use('./map/pins', pinRoute)
-app.use('./map/', userRoute)
+const pinRoute = require('./routes/pins')
+app.use('/map/pins', pinRoute)
+const userRoute = require('./routes/users')
+app.use('/map', userRoute)
 app.get('/', (req,res) => {
-    res.send('Check main website...')
+    res.send('Check main website!')
 })
 
 app.listen(process.env.PORT || 8800, () => {
