@@ -29,9 +29,15 @@ router.post("/register", async (req, res) => {
 //login
 
 router.post("/login", async (req, res) => {
+
+  const { username, password } = req.body;
+
+
   try {
     //find user
-    const user = await User.findOne({ username: req.body.username });
+   
+    const user = await User.findOne({ username });
+  
     if(!user) {
       res.status(400).json("Wrong username or password");
       return;
@@ -51,6 +57,7 @@ router.post("/login", async (req, res) => {
     res.status(200).json({ _id: user._id, username: username });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
