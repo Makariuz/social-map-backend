@@ -27,9 +27,9 @@ app.use('/map/pins', pinRoute)
 const userRoute = require('./routes/users')
 app.use('/map', userRoute)
 app.get('/', (req,res) => {
-    res.send('Check main website!')
+    res.send('Check main website!!!!!x')
 })
 
-app.listen(process.env.PORT || 8800, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('backend server is running')
 })
